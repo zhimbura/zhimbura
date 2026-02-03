@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Тихон Устинов — Портфолио</title>
+  <meta name="description" content="Tech Lead. Compose Multiplatform, Kotlin Multiplatform (Android/iOS). Боты на Kotlin+PostgreSQL и Node.js. Инструмент под задачу.">
+  <style>
+    :root {
+      --bg: #0a0c10;
+      --surface: #161b22;
+      --surface-hover: #1c2128;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --accent-2: #79c0ff;
+      --accent-visited: #a371f7;
+      --border: #30363d;
+      --glow: rgba(88, 166, 255, 0.15);
+      --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    /* Фон: градиент + сетка */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(88, 166, 255, 0.08), transparent),
+        linear-gradient(180deg, var(--bg) 0%, #0d1117 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .grid-bg {
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(48, 54, 61, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(48, 54, 61, 0.15) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.5;
+    }
+
+    .wrap { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+    /* Анимации появления */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes barGrow {
+      from { width: 0; }
+    }
+    @keyframes pulse-soft {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+    @keyframes gradient-shift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 3rem 0 3.5rem;
+      animation: fadeInUp 0.8s ease-out;
+    }
+    .hero h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      margin: 0 0 0.5rem;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, var(--text) 0%, var(--muted) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero .tagline {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin: 0 0 1.5rem;
+      animation: fadeInUp 0.8s ease-out 0.15s both;
+    }
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      animation: fadeInUp 0.8s ease-out 0.3s both;
+    }
+    .hero-badges span {
+      display: inline-block;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.8rem;
+      color: var(--accent);
+      background: rgba(88, 166, 255, 0.1);
+      border: 1px solid rgba(88, 166, 255, 0.25);
+      border-radius: 999px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .hero-badges span:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px var(--glow);
+    }
+    .hero-badges span.primary {
+      color: var(--accent-2);
+      border-color: rgba(121, 192, 255, 0.4);
+      background: rgba(121, 192, 255, 0.12);
+    }
+
+    /* Инфографика: цифры */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      text-align: center;
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+      animation: fadeInUp 0.6s ease-out both;
+    }
+    .stat-card:nth-child(1) { animation-delay: 0.1s; }
+    .stat-card:nth-child(2) { animation-delay: 0.2s; }
+    .stat-card:nth-child(3) { animation-delay: 0.3s; }
+    .stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      border-color: var(--accent);
+    }
+    .stat-card .number {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    .stat-card .label {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* Секции */
+    section {
+      animation: fadeInUp 0.6s ease-out both;
+    }
+    section:nth-of-type(1) { animation-delay: 0.05s; }
+    section:nth-of-type(2) { animation-delay: 0.1s; }
+    section:nth-of-type(3) { animation-delay: 0.15s; }
+    section:nth-of-type(4) { animation-delay: 0.2s; }
+    section:nth-of-type(5) { animation-delay: 0.25s; }
+    section:nth-of-type(6) { animation-delay: 0.3s; }
+    section:nth-of-type(7) { animation-delay: 0.35s; }
+    section:nth-of-type(8) { animation-delay: 0.4s; }
+    section:nth-of-type(9) { animation-delay: 0.45s; }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 2.5rem 0 1rem;
+      color: var(--text);
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    h2::before {
+      content: '';
+      width: 4px;
+      height: 1.2em;
+      background: linear-gradient(180deg, var(--accent), var(--accent-2));
+      border-radius: 2px;
+    }
+    p { margin: 0 0 1rem; color: var(--muted); }
+    a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--accent-2); text-decoration: underline; }
+    a:visited { color: var(--accent-visited); }
+
+    /* Инфографика: стек по релевантности */
+    .stack-bars {
+      margin: 1.5rem 0;
+      animation: fadeInUp 0.6s ease-out 0.2s both;
+    }
+    .stack-bar {
+      margin-bottom: 0.75rem;
+      font-size: 0.9rem;
+    }
+    .stack-bar .label {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.35rem;
+      color: var(--text);
+    }
+    .stack-bar .label strong { color: var(--text); }
+    .stack-bar .track {
+      height: 8px;
+      background: var(--surface);
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .stack-bar .fill {
+      height: 100%;
+      border-radius: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      animation: barGrow 1s ease-out both;
+    }
+    .stack-bar .fill { animation-delay: var(--bar-delay, 0.5s); }
+
+    /* Карточки */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+      animation: fadeInUp 0.5s ease-out both;
+    }
+    .card:nth-child(2) { animation-delay: 0.08s; }
+    .card:nth-child(3) { animation-delay: 0.16s; }
+    .card:nth-child(4) { animation-delay: 0.24s; }
+    .card:nth-child(5) { animation-delay: 0.32s; }
+    .card:nth-child(6) { animation-delay: 0.4s; }
+    .card:nth-child(7) { animation-delay: 0.48s; }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.25), 0 0 0 1px rgba(88, 166, 255, 0.1);
+      border-color: rgba(88, 166, 255, 0.3);
+    }
+    .card h3 { margin: 0 0 0.5rem; font-size: 1.1rem; color: var(--text); }
+    .card p { margin: 0 0 0.5rem; font-size: 0.95rem; }
+    .card .meta { font-size: 0.85rem; color: var(--muted); margin-top: 0.5rem; }
+    .card .links { margin-top: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .card .links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.9rem;
+      padding: 0.35rem 0.65rem;
+      background: rgba(88, 166, 255, 0.1);
+      border-radius: 6px;
+      border: 1px solid rgba(88, 166, 255, 0.2);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .card .links a:hover {
+      background: rgba(88, 166, 255, 0.2);
+      text-decoration: none;
+      transform: scale(1.02);
+    }
+    .card .tags {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .card .tags span {
+      padding: 0.2rem 0.5rem;
+      background: var(--surface-hover);
+      border-radius: 4px;
+      border: 1px solid var(--border);
+    }
+    .card .repo-private {
+      font-size: 0.8rem;
+      color: var(--muted);
+      align-self: center;
+    }
+
+    /* Путь (мини-таймлайн) — столбиком */
+    .path-timeline {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      margin: 1rem 0 1.5rem;
+    }
+    .path-timeline__row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .path-timeline .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+      animation: pulse-soft 2s ease-in-out infinite;
+    }
+    .path-timeline .dot.muted { background: var(--muted); opacity: 0.6; }
+    .path-timeline__line-v {
+      width: 2px;
+      height: 12px;
+      margin-left: 4px;
+      background: var(--border);
+    }
+    .path-timeline .line {
+      width: 2px;
+      height: 12px;
+      margin-left: 4px;
+      background: var(--border);
+    }
+    .path-timeline span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .path-timeline span strong { color: var(--text); }
+
+    ul { margin: 0 0 1rem; padding-left: 1.25rem; color: var(--muted); }
+    ul li { margin-bottom: 0.5rem; }
+
+    /* Контакты как кнопки */
+    .contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+    .contacts a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+    .contacts a:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 20px var(--glow);
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+    .contacts a::before {
+      content: '→';
+      font-size: 0.85em;
+      opacity: 0.7;
+    }
+
+    .en-block {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .en-block h2 { font-size: 1.1rem; margin-top: 0; }
+
+    /* Переключатель языка */
+    .lang-switch {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      display: flex;
+      gap: 0.25rem;
+      z-index: 10;
+    }
+    .lang-switch a {
+      padding: 0.35rem 0.6rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-decoration: none;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+    }
+    .lang-switch a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+    .lang-switch a.active {
+      color: var(--accent);
+      border-color: var(--accent);
+      background: rgba(88, 166, 255, 0.1);
+    }
+    main.lang-ru { display: block; }
+    main.lang-en { display: none; }
+    body.lang-en main.lang-ru { display: none !important; }
+    body.lang-en main.lang-en { display: block !important; }
+    .activity-screenshot {
+      margin: 1.5rem 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      max-width: 100%;
+    }
+    .activity-screenshot img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .activity-screenshot .caption {
+      font-size: 0.85rem;
+      color: var(--muted);
+      padding: 0.5rem 0.75rem;
+      background: var(--surface-hover);
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <nav class="lang-switch" aria-label="Выбор языка">
+      <a href="#" data-lang="ru" class="active" id="btn-lang-ru">RU</a>
+      <a href="#" data-lang="en" id="btn-lang-en">EN</a>
+    </nav>
+    <main class="lang-content lang-ru" id="content-ru">
+    <header class="hero">
+      <h1>Тихон Устинов</h1>
+      <p class="tagline">Tech Lead · Compose Multiplatform, Kotlin Multiplatform (Android/iOS) · Москва</p>
+      <div class="hero-badges">
+        <span class="primary">Compose Multiplatform</span>
+        <span class="primary">Kotlin Multiplatform</span>
+        <span>Kotlin · Ktor</span>
+        <span>Node.js · TypeScript</span>
+        <span>PostgreSQL</span>
+        <span>ИИ (в изучении)</span>
+      </div>
+    </header>
+
+    <!-- Цифры -->
+    <div class="stats-row">
+      <div class="stat-card">
+        <span class="number">100k+</span>
+        <span class="label">установок приложения</span>
+      </div>
+      <div class="stat-card">
+        <span class="number">4.8 ★</span>
+        <span class="label">рейтинг Google Play</span>
+      </div>
+      <div class="stat-card">
+        <span class="number">2</span>
+        <span class="label">статьи на Habr</span>
+      </div>
+    </div>
+
+    <section>
+      <h2>Рабочее приложение</h2>
+      <div class="card">
+        <h3>NDA</h3>
+        <p>Мобильное приложение для сотрудников пунктов выдачи заказов (Android и iOS). Руковожу разработкой. Настраивал CI/CD: сборка и подпись в пайплайне, публикация в сторы. Удобный интерфейс, работа при ограниченной связи.</p>
+        <p class="meta">Стек: Kotlin, Kotlin Multiplatform, Compose Multiplatform, Ktor, Koin, Realm, Room, Voyager, Fastlane, GitLab CI/CD. Firebase, Sentry, консоли сторов (Google Play, App Store, RuStore, AppGallery).</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>О себе</h2>
+      <p>
+        <strong>Tech Lead</strong>, основной опыт — <strong>Kotlin</strong>, <strong>Kotlin Multiplatform</strong> и <strong>Compose Multiplatform</strong>: один код для Android и iOS. Руковожу разработкой мобильного приложения (NDA); приложение в проде.
+      </p>
+      <p style="font-size:0.9rem; color: var(--muted); margin-bottom: 0.5rem;">Рост:</p>
+      <div class="path-timeline path-timeline-current-first">
+        <div class="path-timeline__row"><div class="dot"></div><span><strong>Сейчас</strong> · Tech Lead (Senior KMP) · мобильное приложение (NDA)</span></div>
+        <div class="path-timeline__line-v"></div>
+        <div class="path-timeline__row"><div class="dot"></div><span><strong>Tech Lead</strong> · KMP-SDK, ЕПК (Ростелеком ИТ)</span></div>
+        <div class="path-timeline__line-v"></div>
+        <div class="path-timeline__row"><div class="dot"></div><span><strong>Раньше</strong> · Frontend (Vue)</span></div>
+      </div>
+      <p>
+        Боты на <strong>Kotlin + PostgreSQL</strong> (git-notifier) и на Node.js/TypeScript (Tag Their Bot, Work Network), ВидеоМем Бот (есть версии на Kotlin и на Go), Chrome-расширения, бэкенды. Для разных задач выбираю подходящий инструмент.
+      </p>
+      <p style="font-size:0.9rem; color: var(--muted);">
+        Большинство проектов на GitHub — private, поэтому часть активности и репозиториев не отображается в профиле.
+      </p>
+      <h3 style="font-size:1rem; margin:1.5rem 0 0.5rem; color: var(--muted);">Активность в рабочем GitLab (RWB)</h3>
+      <figure class="activity-screenshot">
+        <img src="gitlab-activity-rwb.jpg" alt="Скриншот графика активности в GitLab RWB — коммиты, merge requests, issues, комментарии" width="640" height="auto" loading="lazy">
+        <figcaption class="caption">График активности за год: issues, merge requests, pushes, комментарии (hosted GitLab RWB).</figcaption>
+      </figure>
+      <p>
+        Сейчас интересуюсь и изучаю <strong>ИИ</strong> для оптимизации рутинных задач, анализа, ресерча и повышения производительности — с грамотным подходом, с бэкграундом, не тяп-ляп.
+      </p>
+      <h3 style="font-size:1rem; margin:1.25rem 0 0.5rem; color: var(--muted);">Стек (по релевантности)</h3>
+      <div class="stack-bars" id="stack-bars" data-i18n="ru"></div>
+      <p style="margin-top:1.25rem;">
+        <strong>БД:</strong> PostgreSQL, Realm, Room, YDB, ClickHouse. <strong>Опыт:</strong> кабинеты сторов (Google Play Console, App Store Connect, RuStore, AppGallery) — настраивал и делал публикацию приложений; Firebase; крашлитика в Sentry, Google Console (Crashlytics), Xcode Organizer; поиск утечек памяти; дашборды в Redash; работа с Kibana.
+      </p>
+    </section>
+
+    <section>
+      <h2>Избранные проекты</h2>
+      <div class="card">
+        <h3>YouTrack Status Tools</h3>
+        <p>Chrome-расширение: статусы и поля задач из YouTrack API, настраиваемые колонки, копирование в Google Sheets.</p>
+        <p class="tags"><span>Chrome Extension</span><span>Webpack</span><span>JavaScript</span></p>
+        <div class="links"><a href="https://chromewebstore.google.com/detail/mmpcdkbebgpmpiffplkedhfkepalhedc?utm_source=item-share-cb" target="_blank" rel="noopener">Chrome Web Store</a><a href="https://github.com/zhimbura/task-update_extantion" target="_blank" rel="noopener">Репозиторий</a></div>
+      </div>
+      <div class="card">
+        <h3>@tag_their_bot (Tag Their Bot)</h3>
+        <p>Управление группами пользователей и тегирование в Telegram-чатах; дежурные с датами или автоитерацией.</p>
+        <p class="tags"><span>Node.js</span><span>TypeScript</span><span>YDB</span></p>
+        <div class="links"><a href="https://t.me/tag_their_bot" target="_blank" rel="noopener">Бот</a><span class="repo-private">Репо: private</span></div>
+      </div>
+      <div class="card">
+        <h3>@video_easily_bot (ВидеоМем Бот)</h3>
+        <p>База мем-видео, быстрый поиск, inline-режим в любом чате (@video_easily_bot &lt;запрос&gt;), пополнение базы пользователями. Есть две реализации: на Kotlin (Ktor) и на Go.</p>
+        <p class="tags"><span>Kotlin</span><span>Ktor</span><span>Go</span></p>
+        <div class="links"><a href="https://t.me/video_easily_bot" target="_blank" rel="noopener">Бот</a><span class="repo-private">Репо: private</span></div>
+      </div>
+      <div class="card">
+        <h3>git-notifier</h3>
+        <p>Уведомления в Telegram о GitLab Pipeline и Merge Request.</p>
+        <p class="tags"><span>Kotlin</span><span>Ktor</span><span>PostgreSQL</span><span>Docker</span></p>
+        <div class="links"><a href="https://github.com/zhimbura/git-notifier" target="_blank" rel="noopener">Репозиторий</a></div>
+      </div>
+      <div class="card">
+        <h3>work_network (Telegram Chat Manager)</h3>
+        <p>Веб-приложение: авторизация через Telegram (в т.ч. 2FA), список чатов.</p>
+        <p class="tags"><span>Node.js</span><span>Express</span><span>GramJS</span></p>
+        <div class="links"><span class="repo-private">Репо: private</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Публикации (Habr)</h2>
+      <ul>
+        <li><a href="https://habr.com/ru/companies/rostelecom/articles/682160/" target="_blank" rel="noopener">Выходим за пределы JVM. Объясняем на крестиках-ноликах чем хорош Kotlin Multiplatform</a> (12.08.2022)</li>
+        <li><a href="https://habr.com/ru/companies/rostelecom/articles/521146/" target="_blank" rel="noopener">Нестабильная сортировка в JavaScript</a> (29.09.2020)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Контакты</h2>
+      <p class="contacts">
+        <a href="https://github.com/zhimbura" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://t.me/zhimbura" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://habr.com/ru/users/zhimbura/" target="_blank" rel="noopener">Habr</a>
+        <a href="https://career.habr.com/tihon-ustinov" target="_blank" rel="noopener">Хабр Карьера</a>
+        <a href="https://hh.ru/resume/4fc2dddaff04faa8680039ed1f75536e516257" target="_blank" rel="noopener">Резюме (HH.ru)</a>
+      </p>
+    </section>
+    </main>
+
+    <main class="lang-content lang-en" id="content-en">
+    <header class="hero">
+      <h1>Tikhon Ustinov</h1>
+      <p class="tagline">Tech Lead · Compose Multiplatform, Kotlin Multiplatform (Android/iOS) · Moscow</p>
+      <div class="hero-badges">
+        <span class="primary">Compose Multiplatform</span>
+        <span class="primary">Kotlin Multiplatform</span>
+        <span>Kotlin · Ktor</span>
+        <span>Node.js · TypeScript</span>
+        <span>PostgreSQL</span>
+        <span>AI (learning)</span>
+      </div>
+    </header>
+    <div class="stats-row">
+      <div class="stat-card">
+        <span class="number">100k+</span>
+        <span class="label">app installs</span>
+      </div>
+      <div class="stat-card">
+        <span class="number">4.8 ★</span>
+        <span class="label">Google Play rating</span>
+      </div>
+      <div class="stat-card">
+        <span class="number">2</span>
+        <span class="label">Habr articles</span>
+      </div>
+    </div>
+    <section>
+      <h2>Work app</h2>
+      <div class="card">
+        <h3>NDA</h3>
+        <p>Mobile app for pickup-point staff (Android and iOS). I lead development. Set up CI/CD: build and signing in the pipeline, publishing to stores. Clear UI, works with limited connectivity.</p>
+        <p class="meta">Stack: Kotlin, KMP, Compose Multiplatform, Ktor, Koin, Realm, Room, Voyager, Fastlane, GitLab CI/CD. Firebase, Sentry, store consoles.</p>
+      </div>
+    </section>
+    <section>
+      <h2>About</h2>
+      <p>
+        <strong>Tech Lead</strong>. Main focus: <strong>Kotlin</strong>, <strong>Kotlin Multiplatform</strong>, <strong>Compose Multiplatform</strong> — one codebase for Android and iOS. I lead development of a mobile app (NDA); the app is in production.
+      </p>
+      <p style="font-size:0.9rem; color: var(--muted); margin-bottom: 0.5rem;">Growth:</p>
+      <div class="path-timeline path-timeline-current-first">
+        <div class="path-timeline__row"><div class="dot"></div><span><strong>Now</strong> · Tech Lead (Senior KMP) · mobile app (NDA)</span></div>
+        <div class="path-timeline__line-v"></div>
+        <div class="path-timeline__row"><div class="dot"></div><span><strong>Tech Lead</strong> · KMP SDK, ЕПК (Rostelecom IT)</span></div>
+        <div class="path-timeline__line-v"></div>
+        <div class="path-timeline__row"><div class="dot"></div><span><strong>Earlier</strong> · Frontend (Vue)</span></div>
+      </div>
+      <p>
+        Bots in <strong>Kotlin + PostgreSQL</strong> (git-notifier) and Node.js/TypeScript (Tag Their Bot, Work Network); video_easily_bot (Kotlin and Go versions), Chrome extensions, backends. I pick the right tool for the job.
+      </p>
+      <p style="font-size:0.9rem; color: var(--muted);">
+        Most GitHub projects are private, so part of the activity and repos is not visible.
+      </p>
+      <h3 style="font-size:1rem; margin:1.5rem 0 0.5rem; color: var(--muted);">Activity in work GitLab (RWB)</h3>
+      <figure class="activity-screenshot">
+        <img src="gitlab-activity-rwb.jpg" alt="GitLab RWB activity graph — commits, merge requests, issues, comments" width="640" height="auto" loading="lazy">
+        <figcaption class="caption">One-year activity: issues, merge requests, pushes, comments (hosted GitLab RWB).</figcaption>
+      </figure>
+      <p>
+        Exploring <strong>AI</strong> for routine tasks, analysis, and research — with a solid approach.
+      </p>
+      <h3 style="font-size:1rem; margin:1.25rem 0 0.5rem; color: var(--muted);">Stack (by relevance)</h3>
+      <div class="stack-bars" id="stack-bars-en" data-i18n="en"></div>
+      <p style="margin-top:1.25rem;">
+        <strong>DBs:</strong> PostgreSQL, Realm, Room, YDB, ClickHouse. <strong>Experience:</strong> store consoles (Google Play, App Store Connect, RuStore, AppGallery), Firebase, Sentry, Redash, Kibana.
+      </p>
+    </section>
+    <section>
+      <h2>Featured projects</h2>
+      <div class="card">
+        <h3>YouTrack Status Tools</h3>
+        <p>Chrome extension: task statuses and fields from YouTrack API, configurable columns, copy to Google Sheets.</p>
+        <p class="tags"><span>Chrome Extension</span><span>Webpack</span><span>JavaScript</span></p>
+        <div class="links"><a href="https://chromewebstore.google.com/detail/mmpcdkbebgpmpiffplkedhfkepalhedc?utm_source=item-share-cb" target="_blank" rel="noopener">Chrome Web Store</a><a href="https://github.com/zhimbura/task-update_extantion" target="_blank" rel="noopener">Repo</a></div>
+      </div>
+      <div class="card">
+        <h3>@tag_their_bot (Tag Their Bot)</h3>
+        <p>User groups and tagging in Telegram chats; duty rotation by date or auto-iteration.</p>
+        <p class="tags"><span>Node.js</span><span>TypeScript</span><span>YDB</span></p>
+        <div class="links"><a href="https://t.me/tag_their_bot" target="_blank" rel="noopener">Bot</a><span class="repo-private">Repo: private</span></div>
+      </div>
+      <div class="card">
+        <h3>@video_easily_bot</h3>
+        <p>Meme-video database, fast search, inline in any chat (@video_easily_bot &lt;query&gt;). Two implementations: Kotlin (Ktor) and Go.</p>
+        <p class="tags"><span>Kotlin</span><span>Ktor</span><span>Go</span></p>
+        <div class="links"><a href="https://t.me/video_easily_bot" target="_blank" rel="noopener">Bot</a><span class="repo-private">Repo: private</span></div>
+      </div>
+      <div class="card">
+        <h3>git-notifier</h3>
+        <p>Telegram notifications for GitLab Pipeline and Merge Request.</p>
+        <p class="tags"><span>Kotlin</span><span>Ktor</span><span>PostgreSQL</span><span>Docker</span></p>
+        <div class="links"><a href="https://github.com/zhimbura/git-notifier" target="_blank" rel="noopener">Repo</a></div>
+      </div>
+      <div class="card">
+        <h3>work_network (Telegram Chat Manager)</h3>
+        <p>Web app: auth via Telegram (incl. 2FA), chat list.</p>
+        <p class="tags"><span>Node.js</span><span>Express</span><span>GramJS</span></p>
+        <div class="links"><span class="repo-private">Repo: private</span></div>
+      </div>
+    </section>
+    <section>
+      <h2>Publications (Habr)</h2>
+      <ul>
+        <li><a href="https://habr.com/ru/companies/rostelecom/articles/682160/" target="_blank" rel="noopener">Beyond the JVM. Kotlin Multiplatform explained with tic-tac-toe</a> (12.08.2022)</li>
+        <li><a href="https://habr.com/ru/companies/rostelecom/articles/521146/" target="_blank" rel="noopener">Unstable sort in JavaScript</a> (29.09.2020)</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Contacts</h2>
+      <p class="contacts">
+        <a href="https://github.com/zhimbura" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://t.me/zhimbura" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://habr.com/ru/users/zhimbura/" target="_blank" rel="noopener">Habr</a>
+        <a href="https://career.habr.com/tihon-ustinov" target="_blank" rel="noopener">Habr Career</a>
+        <a href="https://hh.ru/resume/4fc2dddaff04faa8680039ed1f75536e516257" target="_blank" rel="noopener">Resume (HH.ru)</a>
+      </p>
+    </section>
+    </main>
+
+  </div>
+  <script>
+    (function() {
+      var KEY = 'portfolio-lang';
+      var btnRu = document.getElementById('btn-lang-ru');
+      var btnEn = document.getElementById('btn-lang-en');
+      function setLang(lang) {
+        if (lang === 'en') {
+          document.body.classList.add('lang-en');
+          btnEn.classList.add('active');
+          btnRu.classList.remove('active');
+        } else {
+          document.body.classList.remove('lang-en');
+          btnRu.classList.add('active');
+          btnEn.classList.remove('active');
+        }
+        try { localStorage.setItem(KEY, lang); } catch (e) {}
+      }
+      btnRu.addEventListener('click', function(e) { e.preventDefault(); setLang('ru'); });
+      btnEn.addEventListener('click', function(e) { e.preventDefault(); setLang('en'); });
+      try {
+        var saved = localStorage.getItem(KEY);
+        if (saved === 'en') setLang('en');
+      } catch (e) {}
+    })();
+
+    // Стек (по релевантности): один массив — разметка строится из данных
+    window.PORTFOLIO_STACK = [
+      { label: 'Kotlin', bold: true, width: 100 },
+      { label: 'Kotlin Multiplatform', bold: true, width: 95 },
+      { label: 'Compose Multiplatform', bold: true, width: 90 },
+      { label: 'Ktor, Koin', bold: true, width: 78 },
+      { label: 'Android, iOS', bold: true, width: 78 },
+      { label: 'PostgreSQL', bold: true, width: 77 },
+      { label: 'Realm, Room, YDB, ClickHouse', bold: false, width: 76 },
+      { label: 'Node.js, TypeScript, Express', bold: false, width: 65 },
+      { label: 'Vue.js, Go', bold: false, width: 58 }
+    ];
+
+    function renderStackBars(container, items) {
+      if (!container || !items || !items.length) return;
+      container.innerHTML = '';
+      items.forEach(function(item, i) {
+        var delay = 0.2 + i * 0.08;
+        var labelHtml = item.bold
+          ? '<strong>' + item.label + '</strong>'
+          : item.label;
+        var bar = document.createElement('div');
+        bar.className = 'stack-bar';
+        bar.innerHTML =
+          '<div class="label">' + labelHtml + '</div>' +
+          '<div class="track"><div class="fill" style="width:' + item.width + '%; --bar-delay: ' + delay + 's"></div></div>';
+        container.appendChild(bar);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var ru = document.getElementById('stack-bars');
+      var en = document.getElementById('stack-bars-en');
+      if (window.PORTFOLIO_STACK) {
+        if (ru) renderStackBars(ru, window.PORTFOLIO_STACK);
+        if (en) renderStackBars(en, window.PORTFOLIO_STACK);
+      }
+    });
+  </script>
+</body>
+</html>
