@@ -2,6 +2,8 @@
 
 **Tech Lead** из Москвы. Основной фокус — **Kotlin**, **Kotlin Multiplatform** и **Compose Multiplatform** (Android/iOS из одной кодовой базы). Руковожу разработкой мобильного приложения (NDA); приложение в проде. Настраивал CI/CD: сборка и подпись в пайплайне, публикация в сторы. Боты на Kotlin + PostgreSQL и на Node.js/TypeScript, расширения, бэкенды — подбираю инструмент под задачу.
 
+📄 **Портфолио (страница):** [zhimbura.github.io/zhimbura →](https://zhimbura.github.io/zhimbura/)
+
 Сейчас изучаю **ИИ** для оптимизации рутинных задач, анализа и ресерча — с грамотным подходом.
 
 > Большинство проектов на GitHub — private, поэтому часть активности и репозиториев не отображается.
@@ -39,11 +41,11 @@
 
 ## Контакты
 
-- **Портфолио:** [zhimbura.github.io/portfolio-data](https://zhimbura.github.io/portfolio-data/)
+- **Портфолио:** [zhimbura.github.io/zhimbura](https://zhimbura.github.io/zhimbura/)
 - **Telegram:** [@zhimbura](https://t.me/zhimbura)
 - **Habr:** [zhimbura](https://habr.com/ru/users/zhimbura/)
 - **Хабр Карьера:** [Тихон Устинов](https://career.habr.com/tihon-ustinov)
 
 ---
 
-<sub>**EN:** Tech Lead, Moscow. Focus: Kotlin, KMP, Compose Multiplatform (Android/iOS). Lead dev of mobile app (NDA), in production. [Portfolio](https://zhimbura.github.io/portfolio-data/) · Bots in Kotlin and Node/TS; many repos are private. [Telegram](https://t.me/zhimbura) · [Habr](https://habr.com/ru/users/zhimbura/)</sub>
+<sub>**EN:** Tech Lead, Moscow. Focus: Kotlin, KMP, Compose Multiplatform (Android/iOS). Lead dev of mobile app (NDA), in production. [Portfolio](https://zhimbura.github.io/zhimbura/) · Bots in Kotlin and Node/TS; many repos are private. [Telegram](https://t.me/zhimbura) · [Habr](https://habr.com/ru/users/zhimbura/)</sub>
