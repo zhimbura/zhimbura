@@ -16,7 +16,7 @@
 
 **Бэкенд и инструменты:** `Node.js` `TypeScript` `Express` `Go` `PostgreSQL` `Realm` `Room` `YDB` `ClickHouse` `Chrome Extension` `Telegram Bot API` `Docker` `Firebase`
 
-**Опыт:** консоли сторов (Google Play, App Store Connect, RuStore, AppGallery), публикация приложений; Firebase; Sentry; Redash, Kibana.
+**Опыт:** консоли магазинов приложений (Google Play, App Store Connect, RuStore, AppGallery), публикация приложений; Firebase; Sentry; Redash, Kibana.
 
 ---
 
