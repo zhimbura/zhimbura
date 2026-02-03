@@ -12,9 +12,9 @@
 
 ## Стек (по релевантности)
 
-**Основной:** `Kotlin` `Kotlin Multiplatform` `Compose Multiplatform` `Ktor` `Koin` · Android, iOS
+**Основной:** `Kotlin` `Kotlin Multiplatform` `Compose Multiplatform` `Ktor` `Koin` `Android` `iOS`
 
-**Бэкенд и инструменты:** `Node.js` `TypeScript` `Express` · `Go` · `PostgreSQL` `Realm` `Room` `YDB` `ClickHouse` · Chrome Extension · Telegram Bot API · Docker · Firebase
+**Бэкенд и инструменты:** `Node.js` `TypeScript` `Express` `Go` `PostgreSQL` `Realm` `Room` `YDB` `ClickHouse` `Chrome Extension` `Telegram Bot API` `Docker` `Firebase`
 
 **Опыт:** консоли сторов (Google Play, App Store Connect, RuStore, AppGallery), публикация приложений; Firebase; Sentry; Redash, Kibana.
 
