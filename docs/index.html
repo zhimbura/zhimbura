@@ -107,24 +107,13 @@
       gap: 0.5rem;
       animation: fadeInUp 0.8s ease-out 0.3s both;
     }
-    .hero-badges span {
-      display: inline-block;
-      padding: 0.35rem 0.75rem;
-      font-size: 0.8rem;
-      color: var(--accent);
-      background: rgba(88, 166, 255, 0.1);
-      border: 1px solid rgba(88, 166, 255, 0.25);
-      border-radius: 999px;
-      transition: transform 0.2s, box-shadow 0.2s;
+    .hero-badges img {
+      height: 32px;
+      transition: transform 0.2s, filter 0.2s;
     }
-    .hero-badges span:hover {
+    .hero-badges img:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 20px var(--glow);
-    }
-    .hero-badges span.primary {
-      color: var(--accent-2);
-      border-color: rgba(121, 192, 255, 0.4);
-      background: rgba(121, 192, 255, 0.12);
+      filter: brightness(1.2);
     }
 
     /* Инфографика: цифры */
@@ -280,11 +269,8 @@
       flex-wrap: wrap;
       gap: 0.4rem;
     }
-    .card .tags span {
-      padding: 0.2rem 0.5rem;
-      background: var(--surface-hover);
-      border-radius: 4px;
-      border: 1px solid var(--border);
+    .card .tags img {
+      height: 24px;
     }
     .card .repo-private {
       font-size: 0.8rem;
@@ -436,12 +422,14 @@
       <h1>Тихон Устинов</h1>
       <p class="tagline">Tech Lead · Compose Multiplatform, Kotlin Multiplatform (Android/iOS) · Москва</p>
       <div class="hero-badges">
-        <span class="primary">Compose Multiplatform</span>
-        <span class="primary">Kotlin Multiplatform</span>
-        <span>Kotlin · Ktor</span>
-        <span>Node.js · TypeScript</span>
-        <span>PostgreSQL</span>
-        <span>ИИ (в изучении)</span>
+        <img src="https://img.shields.io/badge/Compose_Multiplatform-4285F4?style=for-the-badge&logo=jetpackcompose&logoColor=white" alt="Compose Multiplatform">
+        <img src="https://img.shields.io/badge/KMP-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin Multiplatform">
+        <img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin">
+        <img src="https://img.shields.io/badge/Ktor-087CFA?style=for-the-badge&logo=ktor&logoColor=white" alt="Ktor">
+        <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js">
+        <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
+        <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL">
+        <img src="https://img.shields.io/badge/AI-412991?style=for-the-badge&logo=openai&logoColor=white" alt="AI">
       </div>
     </header>
 
@@ -462,22 +450,23 @@
     </div>
 
     <section>
-      <h2>Рабочее приложение</h2>
+      <h2>Рабочее приложение · RWB</h2>
       <div class="card">
-        <h3>NDA</h3>
-        <p>Мобильное приложение для сотрудников пунктов выдачи заказов (Android и iOS). Руковожу разработкой. Настраивал CI/CD: сборка и подпись в пайплайне, публикация в магазины приложений. Удобный интерфейс, работа при ограниченной связи.</p>
-        <p class="meta">Стек: Kotlin, Kotlin Multiplatform, Compose Multiplatform, Ktor, Koin, Realm, Room, Voyager, Fastlane, GitLab CI/CD. Firebase, Sentry, консоли магазинов приложений (Google Play, App Store, RuStore, AppGallery).</p>
+        <h3>Goods Flow (WB ПВЗ)</h3>
+        <p>Мобильное приложение для сотрудников пунктов выдачи заказов Wildberries (Android и iOS). Руковожу разработкой. Настраивал CI/CD: сборка и подпись в пайплайне, публикация в магазины приложений. Удобный интерфейс, работа при ограниченной связи.</p>
+        <p class="tags"><img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin"><img src="https://img.shields.io/badge/KMP-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" alt="KMP"><img src="https://img.shields.io/badge/Compose_Multiplatform-4285F4?style=for-the-badge&logo=jetpackcompose&logoColor=white" alt="Compose Multiplatform"><img src="https://img.shields.io/badge/Ktor-087CFA?style=for-the-badge&logo=ktor&logoColor=white" alt="Ktor"><img src="https://img.shields.io/badge/Koin-F88909?style=for-the-badge" alt="Koin"><img src="https://img.shields.io/badge/Realm-39477F?style=for-the-badge&logo=realm&logoColor=white" alt="Realm"><img src="https://img.shields.io/badge/Room-4285F4?style=for-the-badge&logo=android&logoColor=white" alt="Room"><img src="https://img.shields.io/badge/Voyager-7F52FF?style=for-the-badge" alt="Voyager"><img src="https://img.shields.io/badge/Fastlane-00F200?style=for-the-badge&logo=fastlane&logoColor=black" alt="Fastlane"><img src="https://img.shields.io/badge/GitLab_CI%2FCD-FC6D26?style=for-the-badge&logo=gitlab&logoColor=white" alt="GitLab CI/CD"><img src="https://img.shields.io/badge/Firebase-DD2C00?style=for-the-badge&logo=firebase&logoColor=white" alt="Firebase"><img src="https://img.shields.io/badge/Sentry-362D59?style=for-the-badge&logo=sentry&logoColor=white" alt="Sentry"></p>
+        <div class="links"><a href="https://apps.apple.com/ru/app/goods-flow/id6745411712" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=com.wbpoint.android.prod.release" target="_blank" rel="noopener">Google Play</a><a href="https://www.rustore.ru/catalog/app/com.wbpoint.android.prod.release" target="_blank" rel="noopener">RuStore</a></div>
       </div>
     </section>
 
     <section>
       <h2>О себе</h2>
       <p>
-        <strong>Tech Lead</strong>, основной опыт — <strong>Kotlin</strong>, <strong>Kotlin Multiplatform</strong> и <strong>Compose Multiplatform</strong>: один код для Android и iOS. Руковожу разработкой мобильного приложения (NDA); приложение в проде.
+        <strong>Tech Lead</strong>, основной опыт — <strong>Kotlin</strong>, <strong>Kotlin Multiplatform</strong> и <strong>Compose Multiplatform</strong>: один код для Android и iOS. Руковожу разработкой мобильного приложения Goods Flow (WB ПВЗ) в RWB; приложение в проде.
       </p>
       <p style="font-size:0.9rem; color: var(--muted); margin-bottom: 0.5rem;">Рост:</p>
       <div class="path-timeline path-timeline-current-first">
-        <div class="path-timeline__row"><div class="dot"></div><span><strong>Сейчас</strong> · Tech Lead (Senior KMP) · мобильное приложение (NDA)</span></div>
+        <div class="path-timeline__row"><div class="dot"></div><span><strong>Сейчас</strong> · Tech Lead (Senior KMP) · Goods Flow, WB ПВЗ (RWB)</span></div>
         <div class="path-timeline__line-v"></div>
         <div class="path-timeline__row"><div class="dot"></div><span><strong>Tech Lead</strong> · KMP-SDK, ЕПК (Ростелеком ИТ)</span></div>
         <div class="path-timeline__line-v"></div>
@@ -507,33 +496,39 @@
     <section>
       <h2>Избранные проекты</h2>
       <div class="card">
+        <h3>ClipBuffer</h3>
+        <p>Мультибуфер обмена для macOS — менеджер истории копирований. Работает в menu bar, быстрая вставка из истории (⇧⌘V), автоудаление записей, гибкие настройки, два языка интерфейса.</p>
+        <p class="tags"><img src="https://img.shields.io/badge/Swift-F05138?style=for-the-badge&logo=swift&logoColor=white" alt="Swift"><img src="https://img.shields.io/badge/SwiftUI-F05138?style=for-the-badge&logo=swift&logoColor=white" alt="SwiftUI"><img src="https://img.shields.io/badge/macOS-000000?style=for-the-badge&logo=apple&logoColor=white" alt="macOS"></p>
+        <div class="links"><a href="https://clipbuffer.ru/" target="_blank" rel="noopener">Сайт</a><span class="repo-private">Репо: приватный</span></div>
+      </div>
+      <div class="card">
         <h3>YouTrack Status Tools</h3>
         <p>Chrome-расширение: статусы и поля задач из YouTrack API, настраиваемые колонки, копирование в Google Sheets.</p>
-        <p class="tags"><span>Chrome Extension</span><span>Webpack</span><span>JavaScript</span></p>
+        <p class="tags"><img src="https://img.shields.io/badge/Chrome_Extension-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Chrome Extension"><img src="https://img.shields.io/badge/Webpack-8DD6F9?style=for-the-badge&logo=webpack&logoColor=black" alt="Webpack"><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"></p>
         <div class="links"><a href="https://chromewebstore.google.com/detail/mmpcdkbebgpmpiffplkedhfkepalhedc?utm_source=item-share-cb" target="_blank" rel="noopener">Chrome Web Store</a><a href="https://github.com/zhimbura/task-update_extantion" target="_blank" rel="noopener">Репозиторий</a></div>
       </div>
       <div class="card">
         <h3>@tag_their_bot (Tag Their Bot)</h3>
         <p>Управление группами пользователей и тегирование в Telegram-чатах; дежурные с датами или автоитерацией.</p>
-        <p class="tags"><span>Node.js</span><span>TypeScript</span><span>YDB</span></p>
+        <p class="tags"><img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js"><img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"><img src="https://img.shields.io/badge/YDB-5282FF?style=for-the-badge" alt="YDB"></p>
         <div class="links"><a href="https://t.me/tag_their_bot" target="_blank" rel="noopener">Бот</a><span class="repo-private">Репо: приватный</span></div>
       </div>
       <div class="card">
         <h3>@video_easily_bot (ВидеоМем Бот)</h3>
         <p>База мем-видео, быстрый поиск, inline-режим в любом чате (@video_easily_bot &lt;запрос&gt;), пополнение базы пользователями. Есть две реализации: на Kotlin (Ktor) и на Go.</p>
-        <p class="tags"><span>Kotlin</span><span>Ktor</span><span>Go</span></p>
+        <p class="tags"><img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin"><img src="https://img.shields.io/badge/Ktor-087CFA?style=for-the-badge&logo=ktor&logoColor=white" alt="Ktor"><img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Go"></p>
         <div class="links"><a href="https://t.me/video_easily_bot" target="_blank" rel="noopener">Бот</a><span class="repo-private">Репо: приватный</span></div>
       </div>
       <div class="card">
         <h3>git-notifier</h3>
         <p>Уведомления в Telegram о GitLab Pipeline и Merge Request.</p>
-        <p class="tags"><span>Kotlin</span><span>Ktor</span><span>PostgreSQL</span><span>Docker</span></p>
+        <p class="tags"><img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin"><img src="https://img.shields.io/badge/Ktor-087CFA?style=for-the-badge&logo=ktor&logoColor=white" alt="Ktor"><img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL"><img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"></p>
         <div class="links"><a href="https://github.com/zhimbura/git-notifier" target="_blank" rel="noopener">Репозиторий</a></div>
       </div>
       <div class="card">
         <h3>work_network (Telegram Chat Manager)</h3>
         <p>Веб-приложение: авторизация через Telegram (в т.ч. 2FA), список чатов.</p>
-        <p class="tags"><span>Node.js</span><span>Express</span><span>GramJS</span></p>
+        <p class="tags"><img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js"><img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express"><img src="https://img.shields.io/badge/GramJS-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="GramJS"></p>
         <div class="links"><span class="repo-private">Репо: приватный</span></div>
       </div>
     </section>
@@ -563,12 +558,14 @@
       <h1>Tikhon Ustinov</h1>
       <p class="tagline">Tech Lead · Compose Multiplatform, Kotlin Multiplatform (Android/iOS) · Moscow</p>
       <div class="hero-badges">
-        <span class="primary">Compose Multiplatform</span>
-        <span class="primary">Kotlin Multiplatform</span>
-        <span>Kotlin · Ktor</span>
-        <span>Node.js · TypeScript</span>
-        <span>PostgreSQL</span>
-        <span>AI (learning)</span>
+        <img src="https://img.shields.io/badge/Compose_Multiplatform-4285F4?style=for-the-badge&logo=jetpackcompose&logoColor=white" alt="Compose Multiplatform">
+        <img src="https://img.shields.io/badge/KMP-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin Multiplatform">
+        <img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin">
+        <img src="https://img.shields.io/badge/Ktor-087CFA?style=for-the-badge&logo=ktor&logoColor=white" alt="Ktor">
+        <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js">
+        <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
+        <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL">
+        <img src="https://img.shields.io/badge/AI-412991?style=for-the-badge&logo=openai&logoColor=white" alt="AI">
       </div>
     </header>
     <div class="stats-row">
@@ -586,21 +583,22 @@
       </div>
     </div>
     <section>
-      <h2>Work app</h2>
+      <h2>Work app · RWB</h2>
       <div class="card">
-        <h3>NDA</h3>
-        <p>Mobile app for pickup-point staff (Android and iOS). I lead development. Set up CI/CD: build and signing in the pipeline, publishing to stores. Clear UI, works with limited connectivity.</p>
-        <p class="meta">Stack: Kotlin, KMP, Compose Multiplatform, Ktor, Koin, Realm, Room, Voyager, Fastlane, GitLab CI/CD. Firebase, Sentry, store consoles.</p>
+        <h3>Goods Flow (WB ПВЗ)</h3>
+        <p>Mobile app for Wildberries pickup-point staff (Android and iOS). I lead development. Set up CI/CD: build and signing in the pipeline, publishing to stores. Clear UI, works with limited connectivity.</p>
+        <p class="tags"><img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin"><img src="https://img.shields.io/badge/KMP-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" alt="KMP"><img src="https://img.shields.io/badge/Compose_Multiplatform-4285F4?style=for-the-badge&logo=jetpackcompose&logoColor=white" alt="Compose Multiplatform"><img src="https://img.shields.io/badge/Ktor-087CFA?style=for-the-badge&logo=ktor&logoColor=white" alt="Ktor"><img src="https://img.shields.io/badge/Koin-F88909?style=for-the-badge" alt="Koin"><img src="https://img.shields.io/badge/Realm-39477F?style=for-the-badge&logo=realm&logoColor=white" alt="Realm"><img src="https://img.shields.io/badge/Room-4285F4?style=for-the-badge&logo=android&logoColor=white" alt="Room"><img src="https://img.shields.io/badge/Voyager-7F52FF?style=for-the-badge" alt="Voyager"><img src="https://img.shields.io/badge/Fastlane-00F200?style=for-the-badge&logo=fastlane&logoColor=black" alt="Fastlane"><img src="https://img.shields.io/badge/GitLab_CI%2FCD-FC6D26?style=for-the-badge&logo=gitlab&logoColor=white" alt="GitLab CI/CD"><img src="https://img.shields.io/badge/Firebase-DD2C00?style=for-the-badge&logo=firebase&logoColor=white" alt="Firebase"><img src="https://img.shields.io/badge/Sentry-362D59?style=for-the-badge&logo=sentry&logoColor=white" alt="Sentry"></p>
+        <div class="links"><a href="https://apps.apple.com/ru/app/goods-flow/id6745411712" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=com.wbpoint.android.prod.release" target="_blank" rel="noopener">Google Play</a><a href="https://www.rustore.ru/catalog/app/com.wbpoint.android.prod.release" target="_blank" rel="noopener">RuStore</a></div>
       </div>
     </section>
     <section>
       <h2>About</h2>
       <p>
-        <strong>Tech Lead</strong>. Main focus: <strong>Kotlin</strong>, <strong>Kotlin Multiplatform</strong>, <strong>Compose Multiplatform</strong> — one codebase for Android and iOS. I lead development of a mobile app (NDA); the app is in production.
+        <strong>Tech Lead</strong>. Main focus: <strong>Kotlin</strong>, <strong>Kotlin Multiplatform</strong>, <strong>Compose Multiplatform</strong> — one codebase for Android and iOS. I lead development of Goods Flow (WB ПВЗ) at RWB; the app is in production.
       </p>
       <p style="font-size:0.9rem; color: var(--muted); margin-bottom: 0.5rem;">Growth:</p>
       <div class="path-timeline path-timeline-current-first">
-        <div class="path-timeline__row"><div class="dot"></div><span><strong>Now</strong> · Tech Lead (Senior KMP) · mobile app (NDA)</span></div>
+        <div class="path-timeline__row"><div class="dot"></div><span><strong>Now</strong> · Tech Lead (Senior KMP) · Goods Flow, WB ПВЗ (RWB)</span></div>
         <div class="path-timeline__line-v"></div>
         <div class="path-timeline__row"><div class="dot"></div><span><strong>Tech Lead</strong> · KMP SDK, ЕПК (Rostelecom IT)</span></div>
         <div class="path-timeline__line-v"></div>
@@ -629,33 +627,39 @@
     <section>
       <h2>Featured projects</h2>
       <div class="card">
+        <h3>ClipBuffer</h3>
+        <p>Multi-clipboard for macOS — clipboard history manager. Lives in the menu bar, quick paste from history (⇧⌘V), auto-delete entries, flexible settings, two UI languages.</p>
+        <p class="tags"><img src="https://img.shields.io/badge/Swift-F05138?style=for-the-badge&logo=swift&logoColor=white" alt="Swift"><img src="https://img.shields.io/badge/SwiftUI-F05138?style=for-the-badge&logo=swift&logoColor=white" alt="SwiftUI"><img src="https://img.shields.io/badge/macOS-000000?style=for-the-badge&logo=apple&logoColor=white" alt="macOS"></p>
+        <div class="links"><a href="https://clipbuffer.ru/" target="_blank" rel="noopener">Website</a><span class="repo-private">Repo: private</span></div>
+      </div>
+      <div class="card">
         <h3>YouTrack Status Tools</h3>
         <p>Chrome extension: task statuses and fields from YouTrack API, configurable columns, copy to Google Sheets.</p>
-        <p class="tags"><span>Chrome Extension</span><span>Webpack</span><span>JavaScript</span></p>
+        <p class="tags"><img src="https://img.shields.io/badge/Chrome_Extension-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Chrome Extension"><img src="https://img.shields.io/badge/Webpack-8DD6F9?style=for-the-badge&logo=webpack&logoColor=black" alt="Webpack"><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"></p>
         <div class="links"><a href="https://chromewebstore.google.com/detail/mmpcdkbebgpmpiffplkedhfkepalhedc?utm_source=item-share-cb" target="_blank" rel="noopener">Chrome Web Store</a><a href="https://github.com/zhimbura/task-update_extantion" target="_blank" rel="noopener">Repo</a></div>
       </div>
       <div class="card">
         <h3>@tag_their_bot (Tag Their Bot)</h3>
         <p>User groups and tagging in Telegram chats; duty rotation by date or auto-iteration.</p>
-        <p class="tags"><span>Node.js</span><span>TypeScript</span><span>YDB</span></p>
+        <p class="tags"><img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js"><img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"><img src="https://img.shields.io/badge/YDB-5282FF?style=for-the-badge" alt="YDB"></p>
         <div class="links"><a href="https://t.me/tag_their_bot" target="_blank" rel="noopener">Bot</a><span class="repo-private">Repo: private</span></div>
       </div>
       <div class="card">
         <h3>@video_easily_bot</h3>
         <p>Meme-video database, fast search, inline in any chat (@video_easily_bot &lt;query&gt;). Two implementations: Kotlin (Ktor) and Go.</p>
-        <p class="tags"><span>Kotlin</span><span>Ktor</span><span>Go</span></p>
+        <p class="tags"><img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin"><img src="https://img.shields.io/badge/Ktor-087CFA?style=for-the-badge&logo=ktor&logoColor=white" alt="Ktor"><img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Go"></p>
         <div class="links"><a href="https://t.me/video_easily_bot" target="_blank" rel="noopener">Bot</a><span class="repo-private">Repo: private</span></div>
       </div>
       <div class="card">
         <h3>git-notifier</h3>
         <p>Telegram notifications for GitLab Pipeline and Merge Request.</p>
-        <p class="tags"><span>Kotlin</span><span>Ktor</span><span>PostgreSQL</span><span>Docker</span></p>
+        <p class="tags"><img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin"><img src="https://img.shields.io/badge/Ktor-087CFA?style=for-the-badge&logo=ktor&logoColor=white" alt="Ktor"><img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL"><img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"></p>
         <div class="links"><a href="https://github.com/zhimbura/git-notifier" target="_blank" rel="noopener">Repo</a></div>
       </div>
       <div class="card">
         <h3>work_network (Telegram Chat Manager)</h3>
         <p>Web app: auth via Telegram (incl. 2FA), chat list.</p>
-        <p class="tags"><span>Node.js</span><span>Express</span><span>GramJS</span></p>
+        <p class="tags"><img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js"><img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express"><img src="https://img.shields.io/badge/GramJS-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="GramJS"></p>
         <div class="links"><span class="repo-private">Repo: private</span></div>
       </div>
     </section>
